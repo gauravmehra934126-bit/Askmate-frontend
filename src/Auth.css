@@ -1,0 +1,213 @@
+.auth-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: radial-gradient(circle, #1a1a24, #121214);
+    font-family: system-ui, sans-serif;
+}
+
+
+/* Form Card */
+
+.auth-form {
+
+    width: 340px;
+
+    padding: 36px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    background: rgba(24,24,27,0.75);
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 16px;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+
+}
+
+
+/* Heading */
+
+.auth-form h2 {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 1.5rem;
+
+}
+
+
+.auth-brand {
+
+    color: #4d6bfe;
+
+    margin-left: 6px;
+
+}
+
+
+.auth-subtitle {
+
+    margin: -8px 0;
+
+    color: #94a3b8;
+
+    font-size: 0.85rem;
+
+}
+
+
+
+/* Inputs */
+
+.input-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+
+.input-group label {
+
+    color: #cbd5e1;
+
+    font-size: 0.75rem;
+
+}
+
+
+.input-group input {
+
+    padding: 11px 14px;
+
+    border-radius: 8px;
+
+    border: 1px solid #333;
+
+    outline: none;
+
+    background: #0f0f11;
+
+    color: white;
+
+    font-size: 0.9rem;
+
+}
+
+
+.input-group input:focus {
+
+    border-color: #4d6bfe;
+
+    box-shadow: 0 0 0 3px rgba(77,107,254,0.2);
+
+}
+
+
+
+/* Button */
+
+.auth-btn {
+
+    padding: 11px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #4d6bfe;
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.auth-btn:hover {
+
+    background: #3b5bdb;
+
+}
+
+
+
+/* Signup Link */
+
+.auth-switch-text {
+
+    text-align: center;
+
+    color: #94a3b8;
+
+    font-size: 0.82rem;
+
+}
+
+
+.auth-link {
+
+    color: #4d6bfe;
+
+    cursor: pointer;
+
+}
+
+
+.auth-link:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+/* Error */
+
+.auth-error {
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    font-size: 0.82rem;
+
+    color: #f87171;
+
+    background: rgba(239,68,68,0.12);
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:500px){
+
+    .auth-form {
+
+        width: 85%;
+
+        padding: 25px;
+
+    }
+
+}

@@ -1,0 +1,125 @@
+.chats {
+    flex: 1;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto; 
+    overflow-y: auto; 
+    padding: 2rem 1rem; 
+    display: flex;
+    flex-direction: column;
+    gap: 24px; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.welcome-container {
+    text-align: center;
+    margin-top: 15vh;
+    color: #e5e7eb;
+}
+
+.welcome-container h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-container p {
+    font-size: 1.1rem;
+    color: #9ca3af;
+}
+
+/* --- ROW WRAPPERS --- */
+.userRow {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.gptRow {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* --- USER MESSAGE --- */
+.userMessage {
+    background-color: #2b3040;
+    color: #e5e7eb;
+    padding: 12px 20px;
+    border-radius: 18px;
+    max-width: 75%;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+/* --- AI MESSAGE --- */
+.gptMessage {
+    width: 100%;
+    max-width: 100%;
+    color: #d1d5db; 
+    font-size: 0.95rem;
+    line-height: 1.7; 
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem; /* Handles spacing dynamically without margins colliding */
+}
+
+/* Clean up markdown spacing inside the flex-column */
+.gptMessage p, 
+.gptMessage ul, 
+.gptMessage ol, 
+.gptMessage h1, 
+.gptMessage h2, 
+.gptMessage h3 {
+    margin: 0;
+}
+
+.gptMessage ul, 
+.gptMessage ol {
+    padding-left: 1.5rem;
+}
+
+.gptMessage li {
+    margin-bottom: 0.4rem;
+}
+
+
+.gptMessage pre {
+    width: 100%;
+    max-width: 100%;
+    background-color: #0d1117; /* Very dark code block background */
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    padding: 16px;
+    box-sizing: border-box;
+    margin: 0; 
+    
+    /* The magic fix to stop squishing */
+    overflow-x: auto; 
+}
+
+.gptMessage pre code {
+    display: block;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    white-space: pre !important; 
+}
+
+/* Inline code (e.g. `const`) */
+.gptMessage p code, 
+.gptMessage li code {
+    background-color: #2d2d30;
+    color: #e5e7eb;
+    padding: 0.15rem 0.3rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+/* Highlight.js cleanup */
+.hljs {
+    background: transparent !important; 
+    padding: 0 !important;
+}

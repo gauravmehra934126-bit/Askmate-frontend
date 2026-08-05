@@ -1,0 +1,199 @@
+.chatWindow {
+    background-color: #1e1e20; /* DeepSeek main background */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+}
+
+.brand {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #e5e7eb;
+}
+
+.userIcon {
+    background-color: #3b82f6;
+    color: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+/* Loader absolute positioning so it doesn't break layout */
+.loader-container {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* --- DEEPSEEK INPUT AREA --- */
+.chatInput-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px 20px 20px;
+    background: linear-gradient(180deg, transparent 0%, #1e1e20 20%);
+}
+
+.inputBox {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #25262b; /* Subtle input background */
+    border: 1px solid #3f3f46; /* Sharp border */
+    border-radius: 24px;
+    padding: 6px;
+    transition: border-color 0.2s ease;
+}
+
+.inputBox:focus-within {
+    border-color: #52525b;
+}
+
+input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px 50px 12px 16px;
+    font-size: 0.95rem;
+    color: #ececec;
+}
+
+input:focus {
+    outline: none;
+}
+
+#submit {
+    position: absolute;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: #4d6bfe; /* DeepSeek Blue */
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#submit:disabled {
+    background: #3f3f46;
+    color: #71717a;
+    cursor: not-allowed;
+}
+
+#submit:not(:disabled):hover {
+    background: #3b5bdb; /* DeepSeek Blue Hover */
+}
+
+#submit:not(:disabled):active {
+    transform: scale(0.95); /* Satisfying click effect */
+}
+
+.info {
+    font-size: 0.75rem;
+    padding-top: 12px;
+    color: #71717a;
+}
+
+/* --- Dropdown --- */
+.dropDown {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 180px;
+    background-color: #25262b;
+    border: 1px solid #3f3f46;
+    padding: 8px;
+    border-radius: 8px;
+    z-index: 1000;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
+}
+
+.dropDownItem {
+    font-size: 0.85rem;
+    padding: 10px;
+    color: #e5e7eb;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.dropDownItem:hover {
+    background-color: #3f3f46;
+}
+.brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #4d6bfe; /* DeepSeek Blue */
+    letter-spacing: 0.5px; /* Adds a touch of modern spacing */
+}
+
+.userIcon {
+    background-color: #4d6bfe; /* DeepSeek Blue */
+    color: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: opacity 0.2s ease;
+}
+
+.userIcon:hover {
+    opacity: 0.9;
+}
+
+/* --- Sidebar Toggle Controls --- */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.open-sidebar-btn {
+    background: transparent;
+    border: none;
+    color: #a3a3a3;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.open-sidebar-btn:hover {
+    background-color: #25262b;
+    color: #ececec;
+}
