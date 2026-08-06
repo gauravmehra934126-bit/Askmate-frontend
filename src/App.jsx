@@ -19,7 +19,7 @@ const App = () => {
   const [newChat, setNewChat] = useState(true);
   const [allThreads, setAllThreads] = useState([]);
   
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const providerValues = {
     prompt,
