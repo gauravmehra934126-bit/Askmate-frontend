@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../Auth.css";
-import { API_URL } from "../constants"; // Adjust path if needed
+import { API_URL } from "../constants";
 
 function Login({ onSwitchToSignup, onLoginSuccess }) {
     const [email, setEmail] = useState("");

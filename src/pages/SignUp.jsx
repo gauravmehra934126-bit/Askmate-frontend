@@ -20,6 +20,7 @@ function SignUp({ onSwitchToLogin }) {
                 headers: {
                     "Content-Type": "application/json",
                 },
+                credentials: "include", // Ensures cookies can be sent/received if registration logs you in automatically
                 body: JSON.stringify({
                     username,
                     email,
