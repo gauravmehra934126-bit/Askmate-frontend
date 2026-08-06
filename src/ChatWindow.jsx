@@ -3,6 +3,7 @@ import Chat from "./Chat.jsx";
 import { MyContext } from "./MyContext.jsx";
 import { useContext, useState, useEffect } from "react";
 import { ScaleLoader } from "react-spinners";
+import { API_URL } from "./constants"; // adjust path
 
 function ChatWindow() {
     const {
@@ -33,7 +34,7 @@ function ChatWindow() {
         };
 
         try {
-            const response = await fetch("http://localhost:8080/api/chat", options);
+            const response = await fetch(`${API_URL}/chat`, options);
             const res = await response.json();
             setReply(res.reply);
         } catch(err) {
@@ -44,7 +45,7 @@ function ChatWindow() {
 
     const handleLogout = async () => {
         try {
-            await fetch("http://localhost:8080/api/auth/logout", {
+            await fetch(`${API_URL}/auth/logout`,  {
                 method: "POST",
                 credentials: "include"
             });

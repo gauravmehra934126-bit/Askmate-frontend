@@ -2,6 +2,7 @@ import "./Sidebar.css";
 import { useContext, useEffect } from "react";
 import { MyContext } from "./MyContext.jsx";
 import { v1 as uuidv1 } from "uuid";
+import { API_URL } from "./constants";
 
 function Sidebar() {
     const {
@@ -20,8 +21,8 @@ function Sidebar() {
     const getAllThreads = async () => {
         try {
             // Added credentials: "include" so the HTTP-only cookie is sent to the backend
-            const response = await fetch("http://localhost:8080/api/thread", {
-                credentials: "include"
+            const response = await fetch(`${API_URL}/thread`, {
+            credentials: "include"
             });
             const res = await response.json();
             const filteredData = res.map(thread => ({threadId: thread.threadId, title: thread.title}));
@@ -46,8 +47,8 @@ function Sidebar() {
     const changeThread = async (newThreadId) => {
         setCurrThreadId(newThreadId);
         try {
-            const response = await fetch(`http://localhost:8080/api/thread/${newThreadId}`, {
-                credentials: "include"
+            const response = await fetch(`${API_URL}/thread/${newThreadId}`, {
+             credentials: "include"
             });
             const res = await response.json();
             setPrevChats(res);
@@ -60,10 +61,10 @@ function Sidebar() {
 
     const deleteThread = async (threadId) => {
         try {
-            await fetch(`http://localhost:8080/api/thread/${threadId}`, {
-                method: "DELETE",
-                credentials: "include"
-            });
+            await fetch(`${API_URL}/thread/${threadId}`, {
+          method: "DELETE",
+          credentials: "include"
+         });
             setAllThreads(prev => prev.filter(thread => thread.threadId !== threadId));
             if(threadId === currThreadId) {
                 createNewChat();
